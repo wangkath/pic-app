@@ -1,15 +1,22 @@
-import React, {useState} from "react"
-import { tsPropertySignature } from "@babel/types";
+import React, {useState, useEffect} from "react"
 
-const Context = React.createContext();
+const Context = React.createContext()
 
 function ContextProvidor(props) {
-    const [photoArray,setPhotoArray] = useState([])
+    const [allPhotos, setAllPhotos] = useState([])
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
+            .then(data => data.json())
+            .then(data => setAllPhotos(data))
+            // .then(res => res.json())
+            // .then(data => setAllPhotos(data))
+        
+    },[])
     return(
-        <Context.Provider value = {photoArray}>
+        <Context.Provider value = {{allPhotos}}>
             {props.children}
         </Context.Provider>
     )
 }
 
-export default {ContextProvidor,Context}
+export {ContextProvidor,Context}

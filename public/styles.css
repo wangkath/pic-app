@@ -104,7 +104,7 @@ img.image-grid {
 }
  
 .wide {
-    grid-column: span 2;
+    grid-column: span 3;
 }
 
 .tall {
@@ -112,8 +112,13 @@ img.image-grid {
 }
 
 .big {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: span 5;
+    grid-row: span 5;
+}
+
+.regular {
+    grid-row: span 3;
+    grid-column: span 3;
 }
 
 header {
