@@ -31,8 +31,8 @@ function Image({img, className}) {
 Image.propTypes = {
     className: PropTypes.string,
     img: PropTypes.shape({
-        url: PropTypes.string,
-        id: PropTypes.string,
+        url: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
         isFavorite: PropTypes.bool
     })
 }
