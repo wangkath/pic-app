@@ -5,7 +5,7 @@ const Context = React.createContext()
 
 function ContextProvidor(props) {
     const [allPhotos, setAllPhotos] = useState([])
-    const [cartPhotos, setCartPhotos] = useState([])
+    const [cartPhotos, setCartPhotos] = useState([""])
 
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
@@ -30,7 +30,7 @@ function ContextProvidor(props) {
     }
 
     return(
-        <Context.Provider value = {{allPhotos,toggleFavorite,addToCart}}>
+        <Context.Provider value = {{allPhotos,toggleFavorite,addToCart,cartPhotos}}>
             {props.children}
         </Context.Provider>
     )
