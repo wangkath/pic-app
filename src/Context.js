@@ -18,7 +18,7 @@ function ContextProvidor(props) {
     function toggleFavorite(id) {
         setAllPhotos(allPhotos.map(photo => {
             if(photo.id === id) {
-                photo.isFavorited = !photo.isFavorited
+                photo.isFavorite = !photo.isFavorite
             }
             return photo
         }))
