@@ -5,7 +5,7 @@ const Context = React.createContext()
 
 function ContextProvidor(props) {
     const [allPhotos, setAllPhotos] = useState([])
-    const [cartPhotos, setCartPhotos] = useState([""])
+    const [cartPhotos, setCartPhotos] = useState([])
 
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
@@ -29,8 +29,8 @@ function ContextProvidor(props) {
         setCartPhotos(prevItems => [...prevItems, item])
     }
 
-    function removeFromCart(item) {
-        setCartPhotos(prevItems => prevItems.filter(() => !item))
+    function removeFromCart(id) {
+        setCartPhotos(prevItems => prevItems.filter(item => item.id != id))
     }
 
     return(

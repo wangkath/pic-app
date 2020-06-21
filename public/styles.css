@@ -123,6 +123,9 @@ img.image-grid {
 
 header {
     display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     justify-content: space-between;
     align-items: center;
     background-color: var(--pink);
