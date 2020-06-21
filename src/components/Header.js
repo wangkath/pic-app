@@ -7,10 +7,11 @@ function Header() {
     const icon = cartPhotos.length > 0 ? <i className="ri-shopping-cart-fill ri-fw ri-2x"></i> : <i className="ri-shopping-cart-line ri-fw ri-2x"></i>
     return (
         <header>
-            <Link to = "/">
+            <Link to = "/" className = "title">
                 <h2>Pic Some</h2>
             </Link>
-            <Link to = "/cart">
+            <Link to = "/cart" className = "cartbox">
+                <h2>Cart</h2>
                 {icon}
             </Link>
         </header>
