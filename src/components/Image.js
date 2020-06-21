@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 function Image({img, className}) {
     const [hovered,setHovered] = useState(false)
-    const {toggleFavorite, addToCart, cartPhotos} = useContext(Context)
+    const {toggleFavorite, addToCart, cartPhotos,removeFromCart} = useContext(Context)
     
     function heartIcon() {
         if(img.isFavorite) {
@@ -17,7 +17,7 @@ function Image({img, className}) {
     function cartIcon() {
         const image = cartPhotos.some(photo => (photo.id === img.id))
         if(image) {
-            return <i className="ri-shopping-cart-fill cart"></i>
+            return <i onClick = {() => removeFromCart(img)} className="ri-shopping-cart-fill cart"></i>
         } else if(hovered) {
             return <i onClick = {() => addToCart(img)} className="ri-add-circle-line cart"></i> 
         }
