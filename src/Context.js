@@ -11,8 +11,6 @@ function ContextProvidor(props) {
         fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
             .then(data => data.json())
             .then(data => setAllPhotos(data))
-            // .then(res => res.json())
-            // .then(data => setAllPhotos(data))
         
     },[])
 
